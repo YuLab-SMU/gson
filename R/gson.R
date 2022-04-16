@@ -29,6 +29,21 @@ gson <- function(gsid2gene, gsid2name = NULL, gene2name = NULL,
 }
 
 
+
+##' @method print GSON
+##' @export
+print.GSON <- function(x, ...) {
+    ngs <- length(unique(x@gsid2gene$gsid))
+    ng <- length(unique(x@gsid2gene$gene))
+    species <- x@species
+    version <- x@version
+    glue::glue(
+        ">> {ng} genes annotated by {ngs} gene sets.\n",
+        ">> Species: {species}\n", 
+        ">> Version: {version}"
+    )
+}
+
 write.gson <- function(x, file = "") {
     res <- jsonlite::toJSON(as.list(x), pretty = TRUE)
     if (file == "") return(res)
