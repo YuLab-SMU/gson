@@ -3,6 +3,7 @@
 \docType{class}
 \name{GSON-class}
 \alias{GSON-class}
+\alias{show,GSON-method}
 \title{Class "GSON"
 This class represents gene set information.}
 \description{
