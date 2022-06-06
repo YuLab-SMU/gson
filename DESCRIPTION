@@ -1,15 +1,15 @@
 Package: gson
 Title: Base Class and Methods for 'gson' Format
-Version: 0.0.4
+Version: 0.0.5
 Authors@R: c(
        person("Guangchuang", "Yu",     email = "guangchuangyu@gmail.com", role = c("aut", "cre", "cph"), comment = c(ORCID = "0000-0002-6485-8781"))
        )
 Description: Proposes a new file format ('gson') for storing gene set and related information, and provides read, write and other utilities to process this file format.
 Imports:
-  glue,
   jsonlite,
   methods,
   rlang,
+  stats,
   tidyr,
   utils
 ByteCompile: true

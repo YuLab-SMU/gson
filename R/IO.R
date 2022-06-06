@@ -5,6 +5,7 @@
 #'
 #' @return A `GSON` instance
 #' @importFrom jsonlite fromJSON
+#' @importFrom stats setNames
 #' @export
 #'
 #' @examples
@@ -16,13 +17,12 @@
 read.gson <- function(file) {
   x <- jsonlite::fromJSON(file)
   gsid2gene <- stack(x$gsid2gene)
-  gsid2gene <- gsid2gene[, c(2,1)]
-  names(gsid2gene) <- c("gsid", "gene")
+  gsid2gene <- setNames(gsid2gene[, c(2,1)], c("gsid", "gene"))
   
-  idx <- which(vapply(x, length, numeric(1)) == 0)
-  for (i in idx) {
-    x[[i]] <- NULL
-  }
+  #idx <- which(vapply(x, length, numeric(1)) == 0)
+  #for (i in idx) {
+  #  x[[i]] <- NULL
+  #}
   
   gsid2name <- x$gsid2name
   if (!is.null(gsid2name)) {
@@ -34,7 +34,7 @@ read.gson <- function(file) {
     gene2name <- as.data.frame(gene2name)
   }
   
-  gson(gsid2gene = gsid2name, gsid2name = gsid2name,
+  gson(gsid2gene = gsid2gene, gsid2name = gsid2name,
        gene2name = gene2name, species = x$species,
        gsname = as.character(x$gsname), version = x$version,
        accessed_date = as.character(x$accessed_date), 
@@ -50,7 +50,7 @@ write.gson <- function(x, file = "") {
   res <- jsonlite::toJSON(as.list(x), pretty = TRUE)
   if (file == "") return(res)
   
-  info <- paste0("R package: gson v=",  packageVersion("gson"), ", ", Sys.Date())
+  #info <- paste0("R package: gson v=",  packageVersion("gson"), ", ", Sys.Date())
   cat(res, file = file,  sep = "\n")
 }
 
