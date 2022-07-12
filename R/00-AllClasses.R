@@ -6,7 +6,8 @@ setClassUnion("character_OR_NULL", c("character", "NULL"))
 ##'
 ##'
 ##' @name GSON-class
-##' @aliases GSON-class show,GSON-method
+##' @aliases GSON-class 
+##'     show,GSON-method
 ##'
 ##' @docType class
 ##' @slot gsid2gene data.frame with two columns of 'gsid' and 'gene'

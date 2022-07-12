@@ -3,7 +3,7 @@
 ##' @name show
 ##' @docType methods
 ##' @rdname show-methods
-##'
+##' 
 ##' @title show method
 ##' @param object A `GSON` object
 ##' @return message
@@ -19,16 +19,13 @@ setMethod("show", signature(object="GSON"),
 
 
 ##' @method print GSON
-##' @importFrom glue glue
 ##' @export
 print.GSON <- function(x, ...) {
   ngs <- length(unique(x@gsid2gene$gsid))
   ng <- length(unique(x@gsid2gene$gene))
-  species <- x@species
-  version <- x@version
-  glue::glue(
-    ">> {ng} genes annotated by {ngs} gene sets.\n",
-    ">> Species: {species}\n", 
-    ">> Version: {version}"
-  )
+  cat(
+    ">> ",ng, " genes annotated by ", ngs, " gene sets.\n",
+    ">> Species: ", x@species, "\n", 
+    ">> Version: ", x@version, "\n",
+    sep ="")
 }
