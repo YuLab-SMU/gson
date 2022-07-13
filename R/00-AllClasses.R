@@ -30,7 +30,8 @@ setClass("GSON",
              gsname = "character_OR_NULL",
              version = "character_OR_NULL",
              accessed_date =  "character_OR_NULL",
-             info = "character_OR_NULL"
+             info = "character_OR_NULL",
+             keytype =  "character_OR_NULL",
          ),
          prototype=prototype(
              gsid2name = NULL,
@@ -38,8 +39,9 @@ setClass("GSON",
              species =  NULL,
              gsname = NULL,
              version = NULL,
-             accessed_date =  NULL,
-             info = NULL
+             accessed_date = NULL,
+             info = NULL,
+             keytype = NULL
          )
          )
 
