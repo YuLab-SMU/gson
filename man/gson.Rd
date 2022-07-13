@@ -12,6 +12,7 @@ gson(
   gsname = NULL,
   version = NULL,
   accessed_date = NULL,
+  keytype = NULL,
   info = NULL
 )
 }
@@ -29,6 +30,8 @@ gson(
 \item{version}{version of the gene set}
 
 \item{accessed_date}{date to obtain the gene set data}
+
+\item{keytype}{keytype of genes}
 
 \item{info}{extra information}
 }
