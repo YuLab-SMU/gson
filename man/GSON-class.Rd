@@ -27,6 +27,8 @@ This class represents gene set information.
 
 \item{\code{accessed_date}}{time to obtain the gene set data}
 
+\item{\code{keytype}}{keytype of genes}
+
 \item{\code{info}}{extra information}
 }}
 
