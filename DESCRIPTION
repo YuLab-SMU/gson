@@ -6,12 +6,16 @@ Authors@R: c(
        )
 Description: Proposes a new file format ('gson') for storing gene set and related information, and provides read, write and other utilities to process this file format.
 Imports:
-  jsonlite,
-  methods,
-  rlang,
-  stats,
-  tidyr,
-  utils
+    dplyr,
+    jsonlite,
+    KEGGREST,
+    magrittr,
+    methods,
+    readr,
+    rlang,
+    stats,
+    tidyr,
+    utils
 ByteCompile: true
 License: Artistic-2.0
 Encoding: UTF-8
