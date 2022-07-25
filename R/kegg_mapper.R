@@ -11,8 +11,10 @@
 #' @param species your species, NULL if ignored
 #' @param ... pass to gson::gson()
 #' @examples 
+#' \dontrun{
 #'  file = system.file('extdata', "kegg_mapper_blast.txt", package='gson')
 #'  kegg_mapper(file, format = "BLAST", type = "pathway")
+#' }
 kegg_mapper = function(file, 
                        format = c("BLAST","Ghost","Kofam"), 
                        type = c("pathway","module"),
