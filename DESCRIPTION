@@ -11,9 +11,9 @@ Imports:
     KEGGREST,
     magrittr,
     methods,
-    readr,
     rlang,
     stats,
+    stringr,
     tidyr,
     utils
 ByteCompile: true
