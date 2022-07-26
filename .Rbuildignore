@@ -1,1 +1,5 @@
 Makefile
+^.*\.Rproj$
+^\.Rproj\.user$
+^TODO\.md$
+^docs$
