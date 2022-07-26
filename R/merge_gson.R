@@ -15,7 +15,7 @@
 merge_gson = function(..., glist){
   gson_list = c(list(...), glist)
   if (sum(!sapply(gson_list, FUN = inherits, what = "GSON")) > 0){
-    simpleError("All input are expected to be a GSON object.")
+    simpleError("All inputs are expected to be GSON objects.")
   }
   
   slotname = methods::slotNames(gson_list[[1]])
