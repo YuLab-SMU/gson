@@ -38,6 +38,7 @@ read.gson <- function(file) {
        gene2name = gene2name, species = x$species,
        gsname = as.character(x$gsname), version = x$version,
        accessed_date = as.character(x$accessed_date), 
+       keytype = as.character(x$keytype),
        info = as.character(x$info))
 }
 
@@ -64,6 +65,7 @@ as.list.GSON <- function(x,  ...) {
     gsname = x@gsname,
     version = x@version,
     accessed_date = x@accessed_date,
+    keytype = x@keytype,
     info = x@info
   )
 }
