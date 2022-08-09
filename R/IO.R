@@ -36,7 +36,7 @@ read.gson <- function(file) {
   
   gson(gsid2gene = gsid2gene, gsid2name = gsid2name,
        gene2name = gene2name, species = x$species,
-       gsname = as.character(x$gsname), version = x$version,
+       gsname = as.character(x$gsname), version = as.character(x$version),
        accessed_date = as.character(x$accessed_date), 
        keytype = as.character(x$keytype),
        info = as.character(x$info))
@@ -50,7 +50,10 @@ read.gson <- function(file) {
 write.gson <- function(x, file = "") {
   res <- jsonlite::toJSON(as.list(x), pretty = TRUE)
   if (file == "") return(res)
-  
+  # for UTF-8 code error
+  res <- iconv(res, "ASCII", "UTF-8")
+  # for lexical error: invalid character inside string.
+  res <- gsub("\\t", " ", res)
   #info <- paste0("R package: gson v=",  packageVersion("gson"), ", ", Sys.Date())
   cat(res, file = file,  sep = "\n")
 }
