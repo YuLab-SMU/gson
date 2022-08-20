@@ -48,10 +48,12 @@ read.gson <- function(file) {
 ##' @importFrom jsonlite toJSON
 ##' @export
 write.gson <- function(x, file = "") {
-  res <- jsonlite::toJSON(as.list(x), pretty = TRUE)
+  res <- jsonlite::toJSON(as.list.GSON(x), pretty = TRUE)
   if (file == "") return(res)
-  # for UTF-8 code error
-  res <- iconv(res, "ASCII", "UTF-8")
+
+  ### for UTF-8 code error
+  ##res <- iconv(res, "ASCII", "UTF-8") # may return NA
+  
   # for lexical error: invalid character inside string.
   res <- gsub("\\t", " ", res)
   #info <- paste0("R package: gson v=",  packageVersion("gson"), ", ", Sys.Date())
