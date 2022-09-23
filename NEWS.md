@@ -1,3 +1,7 @@
+# gson 0.0.9.001
+
++ set `gsname="WikiPathways"` in `read.gmt.wp(output = "gson")` (2022-09-23, Fri)
+
 # gson 0.0.9
 
 + `gsonList` function to construct `GSONList` object and corresponding `print` method implemented (2022-09-06, Tue)

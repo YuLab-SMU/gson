@@ -54,6 +54,9 @@ read.gmt.wp <- function(gmtfile, output = "data.frame") {
   gsid2name <- unique(data.frame(gsid=x$wpid, name=x$name))
   species <- unique(x$species)
   version <- unique(x$version)
-  gson(gsid2gene=gsid2gene, gsid2name=gsid2name, 
-      species=species, version=version)
+  gson(gsid2gene = gsid2gene, 
+      gsid2name = gsid2name, 
+      gsname = "WikiPathways",
+      species = species, 
+      version = version)
 }
