@@ -24,8 +24,18 @@ print.GSON <- function(x, ...) {
   ngs <- length(unique(x@gsid2gene$gsid))
   ng <- length(unique(x@gsid2gene$gene))
   cat(
+    ">> Gene Set: ", x@gsname, "\n", 
     ">> ",ng, " genes annotated by ", ngs, " gene sets.\n",
     ">> Species: ", x@species, "\n", 
     ">> Version: ", x@version, "\n",
     sep ="")
+}
+
+
+##' @method print GSONList
+##' @export
+print.GSONList <- function(x, ...) {
+  cat(
+    ">> a list of", length(x), "GSON objects.\n"
+  )
 }
