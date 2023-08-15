@@ -5,6 +5,7 @@
 ##' @rdname read-gmt
 ##' @param gmtfile gmt file
 ##' @importFrom utils stack
+##' @importFrom yulab.utils yread
 ##' @export
 ##' @return data.frame
 ##' @author Guangchuang Yu
@@ -17,7 +18,8 @@ read.gmt <- function(gmtfile) {
   ## ont2gene <- ont2gene[, c("ind", "values")]
   ## colnames(ont2gene) <- c("ont", "gene")
   
-  x <- readLines(gmtfile)
+  # x <- readLines(gmtfile)
+  x <- yread(gmtfile)
   ## ont2gene <- lapply(x, function(record) {
   ##     y = strsplit(record, "\t")[[1]]
   ##     data.frame(ont=y[1], gene=y[-c(1:2)])
@@ -58,5 +60,8 @@ read.gmt.wp <- function(gmtfile, output = "data.frame") {
       gsid2name = gsid2name, 
       gsname = "WikiPathways",
       species = species, 
+      urlpattern = "https://www.wikipathways.org/pathways/{gsid}.html",
       version = version)
 }
+
+

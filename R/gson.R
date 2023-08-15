@@ -9,6 +9,7 @@
 #' @param version version of the gene set
 #' @param accessed_date date to obtain the gene set data
 #' @param keytype keytype of genes
+#' @param urlpattern URL pattern
 #' @param info extra information
 #'
 #' @return A 'GSON' instance
@@ -25,7 +26,7 @@
 #' gson(gsid2gene=gsid2gene, gsid2name=gsid2name, species=species, version=version)
 gson <- function(gsid2gene, gsid2name = NULL, gene2name = NULL,
                  species = NULL, gsname = NULL, version = NULL,
-                 accessed_date = NULL, keytype = NULL, info = NULL) {
+                 accessed_date = NULL, keytype = NULL, urlpattern = NULL, info = NULL) {
 
     new("GSON",
         gsid2gene = gsid2gene,
@@ -35,7 +36,8 @@ gson <- function(gsid2gene, gsid2name = NULL, gene2name = NULL,
         gsname = gsname,
         version = version,
         accessed_date = accessed_date,
-        info = info,
-        keytype = keytype)
+        keytype = keytype,
+        urlpattern = urlpattern,
+        info = info)
 }
 

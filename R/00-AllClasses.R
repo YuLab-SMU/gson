@@ -18,6 +18,7 @@ setClassUnion("character_OR_NULL", c("character", "NULL"))
 ##' @slot version version of the gene set
 ##' @slot accessed_date time to obtain the gene set data
 ##' @slot keytype keytype of genes
+##' @slot urlpattern URL pattern to browse gene set online
 ##' @slot info extra information
 ##' @exportClass GSON
 ##' @author Guangchuang Yu \url{https://yulab-smu.top}
@@ -32,7 +33,8 @@ setClass("GSON",
              version = "character_OR_NULL",
              accessed_date =  "character_OR_NULL",
              keytype =  "character_OR_NULL",
-             info = "character_OR_NULL"    
+             urlpattern = "character_OR_NULL",
+             info = "character_OR_NULL"
          ),
          prototype=prototype(
              gsid2name = NULL,
@@ -42,6 +44,7 @@ setClass("GSON",
              version = NULL,
              accessed_date = NULL,
              keytype = NULL,
+             urlpattern = NULL,
              info = NULL         
          )
 )

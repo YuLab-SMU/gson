@@ -1,3 +1,8 @@
+# gson 0.1.0.001
+
++ introduce new slot 'urlpattern' for generating URL of selected gene set (2023-08-16, Wed)
++ use `yulab.utils::yread()` to read GMT file and gson file (2023-08-16, Wed)
+
 # gson 0.1.0
 
 + fixed `read.gson()` by setting the default values (if empty) to NULL (to make it compatible with 'clusterProfiler') (2023-03-03, Mon)

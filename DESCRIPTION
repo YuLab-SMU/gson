@@ -1,6 +1,6 @@
 Package: gson
 Title: Base Class and Methods for 'gson' Format
-Version: 0.1.0
+Version: 0.1.0.001
 Authors@R: c(
        person("Guangchuang", "Yu",     email = "guangchuangyu@gmail.com", role = c("aut", "cre", "cph"), comment = c(ORCID = "0000-0002-6485-8781"))
        )
@@ -11,7 +11,11 @@ Imports:
   rlang,
   stats,
   tidyr,
-  utils
+  utils,
+  yulab.utils (>= 0.0.7)
+Suggests:
+  digest,
+  fs
 ByteCompile: true
 License: Artistic-2.0
 Encoding: UTF-8

@@ -15,7 +15,8 @@
 #' write.gson(x, f)
 #' read.gson(f)
 read.gson <- function(file) {
-  x <- jsonlite::fromJSON(file)
+  #x <- jsonlite::fromJSON(file)
+  x <- yread(file, jsonlite::fromJSON)
   gsid2gene <- stack(x$gsid2gene)
   gsid2gene <- setNames(gsid2gene[, c(2,1)], c("gsid", "gene"))
   #idx <- which(vapply(x, length, numeric(1)) == 0)
@@ -51,6 +52,7 @@ read.gson <- function(file) {
   version <- get_value("version", x)
   accessed_date <- get_value("accessed_date", x)
   keytype <- get_value("keytype", x)
+  urlpattern <- get_value("urlpattern", x)
   info <- get_value("info", x)
   
   gson(gsid2gene = gsid2gene, gsid2name = gsid2name,
@@ -58,6 +60,7 @@ read.gson <- function(file) {
        gsname = gsname, version = version,
        accessed_date = accessed_date, 
        keytype = keytype,
+       urlpattern = urlpattern,
        info = info)
 }
 
@@ -90,6 +93,7 @@ as.list.GSON <- function(x,  ...) {
     version = x@version,
     accessed_date = x@accessed_date,
     keytype = x@keytype,
+    urlpattern = x@urlpattern,
     info = x@info
   )
 }

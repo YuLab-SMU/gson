@@ -13,6 +13,7 @@ gson(
   version = NULL,
   accessed_date = NULL,
   keytype = NULL,
+  urlpattern = NULL,
   info = NULL
 )
 }
@@ -32,6 +33,8 @@ gson(
 \item{accessed_date}{date to obtain the gene set data}
 
 \item{keytype}{keytype of genes}
+
+\item{urlpattern}{URL pattern}
 
 \item{info}{extra information}
 }

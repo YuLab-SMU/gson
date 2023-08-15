@@ -29,6 +29,8 @@ This class represents gene set information.
 
 \item{\code{keytype}}{keytype of genes}
 
+\item{\code{urlpattern}}{URL pattern to browse gene set online}
+
 \item{\code{info}}{extra information}
 }}
 
