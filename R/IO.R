@@ -82,7 +82,8 @@ write.gson <- function(x, file = "") {
   cat(res, file = file,  sep = "\n")
 }
 
-
+##' @method as.list GSON
+##' @export
 as.list.GSON <- function(x,  ...) {
   list(
     gsid2gene = split(x@gsid2gene$gene, x@gsid2gene$gsid),
