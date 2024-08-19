@@ -26,7 +26,8 @@
 #' gson(gsid2gene=gsid2gene, gsid2name=gsid2name, species=species, version=version)
 gson <- function(gsid2gene, gsid2name = NULL, gene2name = NULL,
                  species = NULL, gsname = NULL, version = NULL,
-                 accessed_date = NULL, keytype = NULL, urlpattern = NULL, info = NULL) {
+                 accessed_date = NULL, keytype = NULL, 
+                 urlpattern = NULL, info = NULL) {
 
     new("GSON",
         gsid2gene = gsid2gene,
