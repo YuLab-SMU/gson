@@ -29,6 +29,10 @@ gson <- function(gsid2gene, gsid2name = NULL, gene2name = NULL,
                  accessed_date = NULL, keytype = NULL, 
                  urlpattern = NULL, info = NULL) {
 
+    gsid2gene <- normalize_gson_data_frame(gsid2gene, c("gsid", "gene"), "gsid2gene")
+    gsid2name <- normalize_gson_data_frame(gsid2name, c("gsid", "name"), "gsid2name")
+    gene2name <- normalize_gson_data_frame(gene2name, c("gene", "name"), "gene2name")
+
     new("GSON",
         gsid2gene = gsid2gene,
         gsid2name = gsid2name,
@@ -42,3 +46,17 @@ gson <- function(gsid2gene, gsid2name = NULL, gene2name = NULL,
         info = info)
 }
 
+normalize_gson_data_frame <- function(x, cols, arg) {
+    if (is.null(x)) {
+        return(NULL)
+    }
+    if (!is.data.frame(x)) {
+        stop(arg, " should be a data.frame", call. = FALSE)
+    }
+    if (ncol(x) < length(cols)) {
+        stop(arg, " should have at least ", length(cols), " columns", call. = FALSE)
+    }
+    x <- x[, seq_along(cols), drop = FALSE]
+    colnames(x) <- cols
+    x
+}
