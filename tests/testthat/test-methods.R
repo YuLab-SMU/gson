@@ -9,6 +9,8 @@ test_that("GSON exposes basic container methods", {
   expect_identical(names(x), c("GS1", "GS2"))
   expect_identical(x[["GS1"]], c("g1", "g2"))
   expect_identical(x[[2]], "g3")
+  expect_error(x[["missing"]], "gene set not found")
+  expect_error(x[[c("GS1", "GS2")]], "exactly one gene set")
 })
 
 test_that("as.data.frame.GSON returns membership with optional names", {

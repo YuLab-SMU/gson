@@ -1,5 +1,6 @@
 # gson 0.1.0.001
 
++ expand regression tests for empty memberships, duplicate mappings, missing metadata, multi-species metadata, and invalid container access (2026-06-30, Tue)
 + add `schema_version` to the GSON object and JSON representation to support future file schema evolution (2026-06-30, Tue)
 + add container helpers for GSON objects, including `as.data.frame()`, `length()`, `names()`, `[[`, and `write.gmt()` (2026-06-30, Tue)
 + add `validate_gson()` to check the core GSON data contract and optional mapping table consistency (2026-06-30, Tue)

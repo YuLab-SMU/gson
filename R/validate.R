@@ -18,9 +18,9 @@
 validate_gson <- function(x, error = TRUE) {
     issues <- character()
 
-    if (!inherits(x, "GSON")) {
+    if (!isS4(x) || !inherits(x, "GSON")) {
         issues <- c(issues, "x should be a GSON object")
-        return_gson_validation(issues, error)
+        return(return_gson_validation(issues, error))
     }
 
     issues <- c(issues, validate_required_table(x@gsid2gene, c("gsid", "gene"), "gsid2gene"))
