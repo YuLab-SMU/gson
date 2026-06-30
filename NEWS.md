@@ -1,5 +1,6 @@
 # gson 0.1.0.001
 
++ add README documentation describing GSON as a gene set collection container with creation, GSON IO, GMT, and enrichment examples (2026-06-30, Tue)
 + fix `read.gson()`/`write.gson()` round-tripping of missing optional fields and preserve `gsid2gene` character columns (2026-06-30, Tue)
 + normalize the first two columns of GSON mapping tables in `gson()` and add input validation (2026-06-30, Tue)
 + make `gsonList()` robust to GSON objects without `gsname` and add testthat regression tests (2026-06-30, Tue)
