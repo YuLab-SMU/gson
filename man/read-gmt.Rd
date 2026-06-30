@@ -3,16 +3,23 @@
 \name{read.gmt}
 \alias{read.gmt}
 \alias{read.gmt.wp}
+\alias{write.gmt}
 \title{read.gmt}
 \usage{
 read.gmt(gmtfile)
 
 read.gmt.wp(gmtfile, output = "data.frame")
+
+write.gmt(x, file = "")
 }
 \arguments{
 \item{gmtfile}{gmt file}
 
 \item{output}{one of 'data.frame' or 'GSON'}
+
+\item{x}{A \code{GSON} object}
+
+\item{file}{output GMT file}
 }
 \value{
 data.frame

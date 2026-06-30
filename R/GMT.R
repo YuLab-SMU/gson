@@ -64,4 +64,26 @@ read.gmt.wp <- function(gmtfile, output = "data.frame") {
       version = version)
 }
 
+##' write a GSON object to GMT format
+##'
+##' @title write.gmt
+##' @rdname read-gmt
+##' @param x A `GSON` object
+##' @param file output GMT file
+##' @export
+write.gmt <- function(x, file = "") {
+  term2gene <- split(x@gsid2gene$gene, x@gsid2gene$gsid)
+  descriptions <- setNames(names(term2gene), names(term2gene))
+  if (!is.null(x@gsid2name)) {
+    descriptions[x@gsid2name$gsid] <- x@gsid2name$name
+  }
+  res <- vapply(names(term2gene), function(gsid) {
+    paste(c(gsid, descriptions[[gsid]], term2gene[[gsid]]), collapse = "\t")
+  }, character(1))
+  names(res) <- NULL
+  if (file == "") {
+    return(res)
+  }
+  writeLines(res, file)
+}
 
