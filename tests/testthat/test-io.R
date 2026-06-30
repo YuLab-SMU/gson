@@ -9,6 +9,7 @@ test_that("minimal GSON objects round-trip through gson files", {
   expect_identical(y@gsid2gene, x@gsid2gene)
   expect_null(y@gsid2name)
   expect_null(y@gene2name)
+  expect_identical(y@schema_version, "1.0")
   expect_null(y@species)
   expect_null(y@gsname)
 })
@@ -34,6 +35,7 @@ test_that("optional data frames and metadata round-trip through gson files", {
   expect_identical(y@gsid2gene, x@gsid2gene)
   expect_identical(y@gsid2name, x@gsid2name)
   expect_identical(y@gene2name, x@gene2name)
+  expect_identical(y@schema_version, "1.0")
   expect_identical(y@species, "human")
   expect_identical(y@gsname, "test")
   expect_identical(y@version, "1")
@@ -51,6 +53,7 @@ test_that("legacy empty JSON containers are read as NULL optional fields", {
       '  "gsid2gene": {"A": ["g1"]},',
       '  "gsid2name": [],',
       '  "gene2name": [],',
+      '  "schema_version": {},',
       '  "species": {},',
       '  "gsname": {},',
       '  "version": {},',
@@ -68,6 +71,14 @@ test_that("legacy empty JSON containers are read as NULL optional fields", {
   expect_identical(x@gsid2gene, data.frame(gsid = "A", gene = "g1"))
   expect_null(x@gsid2name)
   expect_null(x@gene2name)
+  expect_identical(x@schema_version, "1.0")
   expect_null(x@species)
   expect_null(x@gsname)
+})
+
+test_that("write.gson includes schema_version", {
+  x <- gson(data.frame(gsid = "A", gene = "g1"))
+  json <- write.gson(x)
+
+  expect_match(json, '"schema_version": \\["1.0"\\]')
 })

@@ -8,6 +8,7 @@ gson(
   gsid2gene,
   gsid2name = NULL,
   gene2name = NULL,
+  schema_version = "1.0",
   species = NULL,
   gsname = NULL,
   version = NULL,
@@ -23,6 +24,8 @@ gson(
 \item{gsid2name}{A data frame with first column of gene set IDs and second column of gene set names}
 
 \item{gene2name}{A data frame with first column of genes and second column of gene symbols}
+
+\item{schema_version}{GSON file schema version}
 
 \item{species}{Which species of the genes belongs to}
 

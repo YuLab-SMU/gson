@@ -25,6 +25,10 @@ read.gson <- function(file) {
   gsid2name <- get_gson_data_frame("gsid2name", x)
   gene2name <- get_gson_data_frame("gene2name", x)
 
+  schema_version <- get_value("schema_version", x)
+  if (is.null(schema_version)) {
+    schema_version <- "1.0"
+  }
   species <- get_value("species", x)
   gsname <- get_value("gsname", x)
   version <- get_value("version", x)
@@ -34,7 +38,8 @@ read.gson <- function(file) {
   info <- get_value("info", x)
   
   gson(gsid2gene = gsid2gene, gsid2name = gsid2name,
-       gene2name = gene2name, species = species,
+       gene2name = gene2name, schema_version = schema_version,
+       species = species,
        gsname = gsname, version = version,
        accessed_date = accessed_date, 
        keytype = keytype,
@@ -67,6 +72,7 @@ as.list.GSON <- function(x,  ...) {
     gsid2gene = split(x@gsid2gene$gene, x@gsid2gene$gsid),
     gsid2name =  data_frame_to_list(x@gsid2name),
     gene2name = data_frame_to_list(x@gene2name),
+    schema_version = x@schema_version,
     species = x@species,
     gsname = x@gsname,
     version = x@version,

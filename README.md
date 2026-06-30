@@ -33,6 +33,7 @@ gsid2name <- data.frame(
 x <- gson(
     gsid2gene = gsid2gene,
     gsid2name = gsid2name,
+    schema_version = "1.0",
     species = "Homo sapiens",
     gsname = "example",
     version = "2026-06-30",
@@ -53,6 +54,10 @@ y <- read.gson(f)
 
 The `.gson` file is JSON, so it can be inspected, archived, and passed between
 tools without an R-specific binary format.
+
+The current GSON schema version is `1.0`. New files written by `write.gson()`
+include `schema_version` so future readers can distinguish the file schema from
+the R package version.
 
 ## Read GMT
 
@@ -87,11 +92,29 @@ table makes enrichment results easier to reproduce and compare.
 
 ## Data Contract
 
+A `.gson` file stores the collection as JSON:
+
+```json
+{
+  "gsid2gene": {"GS1": ["101", "102"]},
+  "gsid2name": {"gsid": ["GS1"], "name": ["cell cycle"]},
+  "gene2name": null,
+  "schema_version": ["1.0"],
+  "species": ["Homo sapiens"],
+  "gsname": ["example"],
+  "version": ["2026-06-30"],
+  "accessed_date": null,
+  "keytype": ["ENTREZID"],
+  "urlpattern": null,
+  "info": null
+}
+```
+
 A `GSON` object represents one gene set collection.
 
 - `gsid2gene` is required and contains `gsid` and `gene`.
 - `gsid2name` is optional and contains `gsid` and `name`.
 - `gene2name` is optional and contains `gene` and `name`.
+- `schema_version` describes the GSON file schema, currently `1.0`.
 - `species`, `gsname`, `version`, `accessed_date`, `keytype`, `urlpattern`, and
   `info` describe the source and interpretation of the collection.
-

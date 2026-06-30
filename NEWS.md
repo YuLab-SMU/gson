@@ -1,5 +1,6 @@
 # gson 0.1.0.001
 
++ add `schema_version` to the GSON object and JSON representation to support future file schema evolution (2026-06-30, Tue)
 + add container helpers for GSON objects, including `as.data.frame()`, `length()`, `names()`, `[[`, and `write.gmt()` (2026-06-30, Tue)
 + add `validate_gson()` to check the core GSON data contract and optional mapping table consistency (2026-06-30, Tue)
 + add README documentation describing GSON as a gene set collection container with creation, GSON IO, GMT, and enrichment examples (2026-06-30, Tue)

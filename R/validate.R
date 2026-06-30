@@ -52,6 +52,10 @@ validate_gson <- function(x, error = TRUE) {
         }
     }
 
+    if (length(x@schema_version) != 1 || is.na(x@schema_version) || x@schema_version == "") {
+        issues <- c(issues, "schema_version should be a non-empty length 1 character value")
+    }
+
     for (slot_name in c("species", "gsname", "version", "accessed_date", "keytype", "urlpattern", "info")) {
         value <- slot(x, slot_name)
         if (!is.null(value) && length(value) > 1) {

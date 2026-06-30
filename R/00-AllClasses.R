@@ -13,6 +13,7 @@ setClassUnion("character_OR_NULL", c("character", "NULL"))
 ##' @slot gsid2gene data.frame with two columns of 'gsid' and 'gene'
 ##' @slot gsid2name data.frame with two columns of 'gsid' and 'name'
 ##' @slot gene2name data.frame with two columns of 'gene' and 'name'
+##' @slot schema_version version of the GSON file schema
 ##' @slot species species of the annotation
 ##' @slot gsname gene set name, e.g., GO, KEGG
 ##' @slot version version of the gene set
@@ -28,6 +29,7 @@ setClass("GSON",
              gsid2gene = "data.frame",
              gsid2name = "data.frame_OR_NULL",
              gene2name = "data.frame_OR_NULL",
+             schema_version = "character",
              species =  "character_OR_NULL",
              gsname = "character_OR_NULL",
              version = "character_OR_NULL",
@@ -39,6 +41,7 @@ setClass("GSON",
          prototype=prototype(
              gsid2name = NULL,
              gene2name = NULL,
+             schema_version = "1.0",
              species =  NULL,
              gsname = NULL,
              version = NULL,

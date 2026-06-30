@@ -19,6 +19,8 @@ This class represents gene set information.
 
 \item{\code{gene2name}}{data.frame with two columns of 'gene' and 'name'}
 
+\item{\code{schema_version}}{version of the GSON file schema}
+
 \item{\code{species}}{species of the annotation}
 
 \item{\code{gsname}}{gene set name, e.g., GO, KEGG}

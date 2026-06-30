@@ -42,3 +42,9 @@ test_that("validate_gson checks missing values and scalar metadata", {
   expect_true(any(grepl("gsid2gene\\$gene should not contain missing or empty values", issues)))
   expect_true(any(grepl("species should be length 1 or NULL", issues)))
 })
+
+test_that("validate_gson checks schema version", {
+  x <- gson(data.frame(gsid = "GS1", gene = "g1"), schema_version = "")
+
+  expect_match(validate_gson(x, error = FALSE), "schema_version should be a non-empty")
+})

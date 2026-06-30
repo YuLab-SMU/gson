@@ -4,6 +4,7 @@
 #' @param gsid2gene A data frame with first column of gene set IDs and second column of genes
 #' @param gsid2name A data frame with first column of gene set IDs and second column of gene set names
 #' @param gene2name A data frame with first column of genes and second column of gene symbols
+#' @param schema_version GSON file schema version
 #' @param species Which species of the genes belongs to
 #' @param gsname Name of the gene set (e.g., GO, KEGG, etc.)
 #' @param version version of the gene set
@@ -25,7 +26,7 @@
 #' version <- unique(x$version)
 #' gson(gsid2gene=gsid2gene, gsid2name=gsid2name, species=species, version=version)
 gson <- function(gsid2gene, gsid2name = NULL, gene2name = NULL,
-                 species = NULL, gsname = NULL, version = NULL,
+                 schema_version = "1.0", species = NULL, gsname = NULL, version = NULL,
                  accessed_date = NULL, keytype = NULL, 
                  urlpattern = NULL, info = NULL) {
 
@@ -37,6 +38,7 @@ gson <- function(gsid2gene, gsid2name = NULL, gene2name = NULL,
         gsid2gene = gsid2gene,
         gsid2name = gsid2name,
         gene2name = gene2name,
+        schema_version = schema_version,
         species = species,
         gsname = gsname,
         version = version,
