@@ -4,6 +4,9 @@
 collections. A `GSON` object stores gene set membership together with gene set
 names, gene identifiers, species, version, source, and URL metadata so the same
 collection can be reused across enrichment analysis and related workflows.
+The `gson` format is natively supported by `enrichit` and the
+`clusterProfiler` family of enrichment analysis packages, and can also be used
+as a general-purpose gene set collection container.
 
 The core table is `gsid2gene`, a long data frame with one row per gene set-gene
 membership. Optional tables map gene set IDs to readable names (`gsid2name`) and
