@@ -42,6 +42,7 @@ names.GSON <- function(x) {
 #' @param ... Unused.
 #'
 #' @return A character vector of genes.
+#' @rdname extract.GSON
 #' @method [[ GSON
 #' @export
 `[[.GSON` <- function(x, i, ...) {

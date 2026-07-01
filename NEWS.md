@@ -1,7 +1,5 @@
 # gson 0.2.0
 
-+ fix roxygen documentation for GSON S3 methods and use `methods::slot()` in validation checks (2026-07-01, Wed)
-+ document native GSON support in `enrichit` and the `clusterProfiler` family of enrichment analysis packages (2026-07-01, Wed)
 + expand regression tests for empty memberships, duplicate mappings, missing metadata, multi-species metadata, and invalid container access (2026-06-30, Tue)
 + add `schema_version` to the GSON object and JSON representation to support future file schema evolution (2026-06-30, Tue)
 + add container helpers for GSON objects, including `as.data.frame()`, `length()`, `names()`, `[[`, and `write.gmt()` (2026-06-30, Tue)
