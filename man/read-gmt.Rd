@@ -26,6 +26,8 @@ data.frame
 }
 \description{
 parse gmt file to a data.frame
+
+write a GSON object to GMT format
 }
 \author{
 Guangchuang Yu

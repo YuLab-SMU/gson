@@ -1,6 +1,6 @@
 Package: gson
 Title: Base Class and Methods for 'gson' Format
-Version: 0.1.0.001
+Version: 0.2.0
 Authors@R: c(person("Guangchuang", "Yu", email = "guangchuangyu@gmail.com", role = c("aut", "cre", "cph"), comment = c(ORCID = "0000-0002-6485-8781")))
 Description: Provides a lightweight container and exchange format for gene set collections. It stores gene set membership, names, gene identifiers, species, versions, and source metadata, with utilities for reading, writing, validating, and converting gene set data for enrichment analysis and related workflows.
 Imports:
@@ -20,4 +20,4 @@ License: Artistic-2.0
 Encoding: UTF-8
 Config/testthat/edition: 3
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.3.0
+Config/roxygen2/version: 8.0.0

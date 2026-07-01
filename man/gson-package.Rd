@@ -5,10 +5,15 @@
 \alias{gson-package}
 \title{gson: Base Class and Methods for 'gson' Format}
 \description{
-Proposes a new file format ('gson') for storing gene set and related information, and provides read, write and other utilities to process this file format.
+Provides a lightweight container and exchange format for gene set collections. It stores gene set membership, names, gene identifiers, species, versions, and source metadata, with utilities for reading, writing, validating, and converting gene set data for enrichment analysis and related workflows.
 }
 \author{
 \strong{Maintainer}: Guangchuang Yu \email{guangchuangyu@gmail.com} (\href{https://orcid.org/0000-0002-6485-8781}{ORCID}) [copyright holder]
+
+Authors:
+\itemize{
+  \item Guangchuang Yu \email{guangchuangyu@gmail.com} (\href{https://orcid.org/0000-0002-6485-8781}{ORCID}) [copyright holder]
+}
 
 }
 \keyword{internal}

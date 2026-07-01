@@ -4,7 +4,6 @@
 #' @param row.names Unused.
 #' @param optional Unused.
 #' @param ... Unused.
-#' @param i A gene set ID or numeric index.
 #'
 #' @return A data frame with gene set-gene memberships and optional names.
 #' @method as.data.frame GSON
@@ -36,6 +35,13 @@ names.GSON <- function(x) {
     unique(x@gsid2gene$gsid)
 }
 
+#' Extract genes from a GSON object
+#'
+#' @param x A `GSON` object.
+#' @param i A gene set ID or numeric index.
+#' @param ... Unused.
+#'
+#' @return A character vector of genes.
 #' @method [[ GSON
 #' @export
 `[[.GSON` <- function(x, i, ...) {

@@ -57,7 +57,7 @@ validate_gson <- function(x, error = TRUE) {
     }
 
     for (slot_name in c("species", "gsname", "version", "accessed_date", "keytype", "urlpattern", "info")) {
-        value <- slot(x, slot_name)
+        value <- methods::slot(x, slot_name)
         if (!is.null(value) && length(value) > 1) {
             issues <- c(issues, paste0(slot_name, " should be length 1 or NULL"))
         }

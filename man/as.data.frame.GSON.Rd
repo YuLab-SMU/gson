@@ -2,18 +2,9 @@
 % Please edit documentation in R/methods.R
 \name{as.data.frame.GSON}
 \alias{as.data.frame.GSON}
-\alias{length.GSON}
-\alias{names.GSON}
-\alias{[[.GSON}
 \title{Coerce GSON to a data frame}
 \usage{
 \method{as.data.frame}{GSON}(x, row.names = NULL, optional = FALSE, ...)
-
-\method{length}{GSON}(x)
-
-\method{names}{GSON}(x)
-
-\method{[[}{GSON}(x, i, ...)
 }
 \arguments{
 \item{x}{A \code{GSON} object.}
@@ -23,8 +14,6 @@
 \item{optional}{Unused.}
 
 \item{...}{Unused.}
-
-\item{i}{A gene set ID or numeric index.}
 }
 \value{
 A data frame with gene set-gene memberships and optional names.
