@@ -42,12 +42,16 @@ read.gmt <- function(gmtfile) {
 ##' @rdname read-gmt
 ##' @param output one of 'data.frame' or 'GSON'
 ##' @importFrom rlang .data
-##' @importFrom tidyr separate
 ##' @export
 read.gmt.wp <- function(gmtfile, output = "data.frame") {
   output <- match.arg(output, c("data.frame", "gson", "GSON"))
   x <- read.gmt(gmtfile)
-  x <- tidyr::separate(x, .data$term, c("name","version","wpid","species"), "%")
+  parts <- strsplit(as.character(x$term), "%")
+  x$name <- vapply(parts, `[`, FUN.VALUE = character(1), 1)
+  x$version <- vapply(parts, `[`, FUN.VALUE = character(1), 2)
+  x$wpid <- vapply(parts, `[`, FUN.VALUE = character(1), 3)
+  x$species <- vapply(parts, `[`, FUN.VALUE = character(1), 4)
+  x$term <- NULL
   if (output == "data.frame") {
     return(x)
   }

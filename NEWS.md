@@ -1,3 +1,7 @@
+# gson 0.2.1
+
++ replace `tidyr::separate` with base R `strsplit` in `read.gmt.wp()`, resolving `vector memory limit` / `long vectors not supported` errors on macOS aarch64 and removing tidyr dependency (2026-08-04, Tue, clusterProfiler#762)
+
 # gson 0.2.0
 
 + expand regression tests for empty memberships, duplicate mappings, missing metadata, multi-species metadata, and invalid container access (2026-06-30, Tue)
